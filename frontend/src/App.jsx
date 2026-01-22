@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import './App.css'
-import Join from './components/Join'
-import Chat from './components/Chat'
+import Join from './components/join/Join'
+import Chat from './components/chat/Chat'
 
 function App() {
  
