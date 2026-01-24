@@ -53,3 +53,17 @@
     margin-left: 6px;
   }
 }
+@media (min-width: 601px) and (max-width: 900px) {
+  .info-bar {
+    padding: 9px 18px;
+    font-size: 13px;
+  }
+  .info-bar h1 {
+    font-size: 17px;
+  }
+  .info-bar .icons img {
+    width: 18px;
+    height: 18px;
+    margin-left: 9px;
+  }
+}
