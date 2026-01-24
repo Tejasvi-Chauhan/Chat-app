@@ -67,3 +67,17 @@
     margin-left: 9px;
   }
 }
+@media (min-width: 901px) and (max-width: 1200px) {
+  .info-bar {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .info-bar h1 {
+    font-size: 18px;
+  }
+  .info-bar .icons img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+}
