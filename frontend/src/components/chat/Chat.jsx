@@ -34,15 +34,6 @@ const Chat = () => {
         alert(error);
       }
     });
-
-    // Cleanup on unmount
-    return () => {
-      if (socket) {
-        socket.emit('disconnect');
-        socket.off();
-        socket.close();
-      }
-    };
   }, [location.search, name, room]);
 
   useEffect(() => {
