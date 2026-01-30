@@ -5,7 +5,6 @@ import { useLocation } from "react-router-dom";
 
 import Messages from "../Messages/Messages.jsx";
 import TextContainer from "../TextContainer/TextContainer.jsx";
-
 import InfoBar from "../InfoBar/InfoBar";
 import Input from "../Input/Input.jsx";
 
@@ -17,15 +16,18 @@ let socket;
 
 const Chat = () => {
   const location = useLocation();
+
   const { name: initialName, room: initialRoom } = queryString.parse(
-    location.search,
+    location.search
   );
+
   const [name] = useState(initialName || "");
   const [room] = useState(initialRoom || "");
-  const [users, setUsers] = useState("");
+  const [users, setUsers] = useState([]);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
+  // 🔹 SOCKET CONNECTION + JOIN
   useEffect(() => {
     socket = io(ENDPOINT);
 
@@ -34,23 +36,37 @@ const Chat = () => {
         alert(error);
       }
     });
-  }, [location.search, name, room]);
 
+    return () => {
+      socket.disconnect();
+      socket.off();
+    };
+  }, [name, room]);
+
+  // 🔹 MESSAGE & ROOM LISTENERS
   useEffect(() => {
     socket.on("message", (message) => {
-      setMessages((messages) => [...messages, message]);
+      setMessages((prevMessages) => [...prevMessages, message]);
     });
 
     socket.on("roomData", ({ users }) => {
       setUsers(users);
     });
+
+    return () => {
+      socket.off("message");
+      socket.off("roomData");
+    };
   }, []);
 
+  // 🔹 SEND MESSAGE
   const sendMessage = (event) => {
     event.preventDefault();
 
-    if (message) {
-      socket.emit("sendMessage", message, () => setMessage(""));
+    if (message.trim()) {
+      socket.emit("sendMessage", message, () => {
+        setMessage("");
+      });
     }
   };
 
