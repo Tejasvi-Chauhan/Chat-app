@@ -1,71 +1,67 @@
-html, body {
-  font-family: 'Roboto', sans-serif;
-  padding: 0;
-  margin: 0;
-}
-
-#root {
-  height: 100vh;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.joinOuterContainer {
+.messageContainer {
   display: flex;
-  justify-content: center;
-  text-align: center;
-  height: 100vh;
+  justify-content: flex-end;
+  padding: 0 5%;
+  margin-top: 3px;
+}
+
+.sentText {
+  display: flex;
   align-items: center;
-  background-color: #1A1A1D;
+  font-family: Helvetica;
+  color: #828282;
+  letter-spacing: 0.3px;
 }
 
-.joinInnerContainer {
-  width: 20%;
+.pl-10 {
+  padding-left: 10px;
 }
 
-.joinInput {
-  border-radius: 0;
-  padding: 15px 20px;
-  width: 100%;
+.pr-10 {
+  padding-right: 10px;
 }
 
-.heading {
+.messageBox {
+  background: #f3f3f3;
+  border-radius: 20px;
+  padding: 5px 20px;
   color: white;
-  font-size: 2.5em;
-  padding-bottom: 10px;
-  border-bottom: 2px solid white;
+  display: inline-block;
+  max-width: 80%;
 }
 
-.button {
-    color: #fff !important;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #2979FF;
-    padding: 20px;
-    border-radius: 5px;
-    display: inline-block;
-    border: none;
-    width: 100%;
+.messageText {
+  width: 100%;
+  letter-spacing: 0;
+  float: left;
+  font-size: 1.1em;
+  word-wrap: break-word;
 }
 
-.mt-20 {
-  margin-top: 20px;
+.messageText img {
+  vertical-align: middle;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
-  .joinOuterContainer {
-    height: 100%;
-  }
-
-  .joinInnerContainer {
-    width: 90%;
-  }
-
-
+.messageText.colorWhite {
+  color: white;
 }
 
-button:focus {
-  outline: 0;
+.messageText.colorDark {
+  color: #353535;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.backgroundBlue {
+  background: #2979FF;
+}
+
+.backgroundLight {
+  background: #F3F3F3;
 }
