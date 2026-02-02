@@ -6,11 +6,21 @@ import './TextContainer.css';
 
 const TextContainer = ({ users }) => (
   <div className="textContainer">
-    <div>
-      <h1>Realtime Chat Application <span role="img" aria-label="emoji">💬</span></h1>
-      <h2>Created with React, Express, Node and Socket.IO <span role="img" aria-label="emoji">❤️</span></h2>
-      <h2>Try it out right now! <span role="img" aria-label="emoji">⬅️</span></h2>
-    </div>
+   <div className="landingContent">
+  <h1 className="title">
+    Real-time Chat Application <span role="img" aria-label="chat">💬</span>
+  </h1>
+
+  <p className="subtitle">
+    Fast, secure real-time messaging built with
+    <span> React</span>, <span>Node.js</span>, <span>Express</span> & <span>Socket.IO</span>
+  </p>
+
+  <p className="cta">
+    Start chatting instantly <span role="img" aria-label="arrow">←</span>
+  </p>
+</div>
+
     {
       users
         ? (
