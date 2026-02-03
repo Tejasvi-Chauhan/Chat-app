@@ -8,7 +8,7 @@ const TextContainer = ({ users }) => (
   <div className="textContainer">
    <div className="landingText">
   <h1>
-    Realtime Chat Application <span role="img" aria-label="chat">💬</span>
+    Realtime Chat Application <span role="img" aria-label="chat"></span>
   </h1>
 
   <p className="subtitle">
